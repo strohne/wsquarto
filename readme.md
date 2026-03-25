@@ -1,11 +1,15 @@
 # Quarto Workshop
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/strohne/wsquarto/main?urlpath=rstudio)
+
+
+## Visualisation basics
 
 1. Data management
 2. Visualisation using volkeR
 3. Visualisation using ggplot
 
-4. Interactive visualisations
+## Interactive visualisations
 
 See https://quarto.org/docs/interactive/
 
