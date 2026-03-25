@@ -1,0 +1,20 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+## Quarto
+
+
+```{r}
+
+library(tidyverse)
+library(readxl)
+
+ds <- read_xlsx("data/topfruitspublic.xlsx")
+
+```
+
