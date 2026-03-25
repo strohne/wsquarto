@@ -1,0 +1,73 @@
+---
+title: "2 - Visualization using volkeR"
+format: html
+---
+
+### Setup
+
+#### volkerR
+
+Fisrt, install install.packages("volker") in your console.
+
+```{r}
+#| include: false
+#| label: Setup
+library(tidyverse)
+library(readxl)
+library(volker)
+```
+
+### Importing
+
+```{r}
+ds_long <- read_csv("1_datamanagement_files/fruits_long.csv")
+
+```
+
+```{r}
+#| label: volker-counts-fruit
+#| echo: true
+#| fig-cap: "Most popular fruits"
+
+report_counts(ds_long, fruit)
+```
+
+```{r}
+#| label: volker-counts-fruit-by-rank
+#| echo: true
+#| fig-cap: "Fruits by preference rank"
+
+report_counts(ds_long, fruit, rank)
+```
+
+```{r}
+#| label: volker-counts-fruit-by-diet
+#| echo: true
+#| fig-cap: "Fruits by diet type"
+
+report_counts(ds_long, fruit, diet_type)
+```
+
+```{r}
+#| label: volker-counts-fruit-by-gender
+#| echo: true
+#| fig-cap: "Fruits by gender"
+
+report_counts(ds_long, fruit, gender)
+```
+
+```{r}
+#| label: volker-metrics-age
+#| echo: true
+#| fig-cap: "Age distribution"
+
+report_metrics(ds_long, age)
+```
+
+```{r}
+#| label: volker-metrics-age-by-gender
+#| echo: true
+#| fig-cap: "Age distribution by gender"
+
+report_metrics(ds_long, age, gender)
+```

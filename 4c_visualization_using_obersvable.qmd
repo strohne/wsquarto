@@ -1,0 +1,86 @@
+---
+title: "4c_visualization_using_observable"
+format: html
+---
+
+```{r}
+library(ggplot2)
+library(tidyverse)
+```
+
+
+```{r}
+ds_long <- read_csv("1_datamanagement_files/fruits_long.csv")
+
+```
+
+
+```{r}
+#| echo: false
+ojs_define(data = ds_long)
+
+```
+
+
+```{ojs}
+//| label: ojs-input-diet
+//| echo: true
+
+viewof selected_diet = Inputs.select(
+  ["omnivore", "vegetarian"],
+  {label: "Diet type:"}
+)
+```
+
+
+```{ojs}
+//| label: ojs-filter
+//| echo: true
+filtered = transpose(data).filter(d => d.diet_type === selected_diet)
+```
+
+
+
+```{ojs}
+//| label: ojs-plot-fruit
+//| echo: true
+
+Plot.plot({
+  marks: [
+    Plot.barX(filtered, Plot.groupY({x: "count"}, {y: "fruit", sort: {y: "x", reverse: true}}))
+  ],
+  x: {label: "Count"},
+  y: {label: "Fruit"},
+  marginLeft: 120
+})
+```
+
+
+
+```{ojs}
+//| label: ojs-input-gender
+//| echo: true
+
+viewof selected_gender = Inputs.checkbox(
+  ["m", "f"],
+  {value: ["m", "f"], label: "Gender:"}
+)
+```
+
+
+
+```{ojs}
+//| label: ojs-filter-gender
+//| echo: true
+
+filtered2 = transpose(data).filter(d => selected_gender.includes(d.gender))
+```
+
+
+```{ojs}
+//| label: ojs-table
+//| echo: true
+
+Inputs.table(filtered2)
+```
+
