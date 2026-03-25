@@ -1,3 +1,6 @@
+1_datamanagement_files
+*.html
+
 # History files
 .Rhistory
 .Rapp.history
