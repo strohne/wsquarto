@@ -1,0 +1,61 @@
+---
+title: "ggplot example"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(ggplot2)
+
+theme_set(theme_bw())
+knitr::opts_chunk$set(echo = FALSE)
+
+```
+
+```{r}
+#| include: false
+
+ds <- read_csv("data/fruits_long.csv")
+
+```
+
+```{r}
+
+ds |> 
+  count(fruit) |>
+  mutate(fruit = fct_reorder(fruit, n)) |> 
+  
+  ggplot(aes(x = fruit, y = n)) + 
+  
+  geom_col() +
+  
+  coord_flip() +
+  labs(
+    title = "Most popular fruits",
+    x = "Fruit", y = "Count"
+  ) 
+
+```
+
+```{r}
+
+ds |> 
+  count(fruit, diet_type) |>
+  mutate(fruit = fct_reorder(fruit, n)) |> 
+  
+  ggplot(aes(x = fruit, y = n, fill = diet_type)) + 
+  
+  geom_col(position = "dodge") +
+  
+  coord_flip() +
+  labs(
+    title =  "Fruits by diet type",
+    x = "Fruit", y = "Count"
+  ) 
+
+```
+

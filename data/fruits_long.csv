@@ -1,0 +1,22 @@
+fruit,name,rank,age,gender,diet_type,date,first_confidence,second_confidence,third_confidence,reasoning,seasonal,distaste
+himberre,a,1,NA,f,vegetarian,2026-03-20T00:00:00Z,NA,NA,NA,NA,NA,NA
+erdbeere,a,2,NA,f,vegetarian,2026-03-20T00:00:00Z,NA,NA,NA,NA,NA,NA
+ananas,a,3,NA,f,vegetarian,2026-03-20T00:00:00Z,NA,NA,NA,NA,NA,NA
+kirsche,b,1,27,f,vegetarian,2026-03-20T00:00:00Z,NA,NA,NA,NA,NA,NA
+honigmelone,b,2,27,f,vegetarian,2026-03-20T00:00:00Z,NA,NA,NA,NA,NA,NA
+erdbeere,b,3,27,f,vegetarian,2026-03-20T00:00:00Z,NA,NA,NA,NA,NA,NA
+erdbeere,c,1,26,m,vegetarian,2026-03-20T00:00:00Z,NA,NA,NA,NA,NA,NA
+brombeere,c,2,26,m,vegetarian,2026-03-20T00:00:00Z,NA,NA,NA,NA,NA,NA
+ananas,c,3,26,m,vegetarian,2026-03-20T00:00:00Z,NA,NA,NA,NA,NA,NA
+brombeere,d,1,27,m,vegetarian,2026-03-20T00:00:00Z,NA,NA,NA,taste / texture,NA,kiwi
+weintraube,d,2,27,m,vegetarian,2026-03-20T00:00:00Z,NA,NA,NA,taste / texture,NA,kiwi
+ananas,d,3,27,m,vegetarian,2026-03-20T00:00:00Z,NA,NA,NA,taste / texture,NA,kiwi
+mango,e,1,44,m,omnivore,2026-03-24T00:00:00Z,NA,NA,NA,asthetics,NA,NA
+brombeere,e,2,44,m,omnivore,2026-03-24T00:00:00Z,NA,NA,NA,asthetics,NA,NA
+erdbeere,e,3,44,m,omnivore,2026-03-24T00:00:00Z,NA,NA,NA,asthetics,NA,NA
+schwarze johannisbeere,f,1,NA,m,omnivore,2026-03-24T00:00:00Z,NA,NA,NA,NA,NA,NA
+brombeere,f,2,NA,m,omnivore,2026-03-24T00:00:00Z,NA,NA,NA,NA,NA,NA
+aprikose,f,3,NA,m,omnivore,2026-03-24T00:00:00Z,NA,NA,NA,NA,NA,NA
+banane,g,1,30,f,omnivore,2026-03-24T00:00:00Z,NA,NA,NA,NA,NA,NA
+guave,g,2,30,f,omnivore,2026-03-24T00:00:00Z,NA,NA,NA,NA,NA,NA
+kiwi,g,3,30,f,omnivore,2026-03-24T00:00:00Z,NA,NA,NA,NA,NA,NA

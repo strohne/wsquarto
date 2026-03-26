@@ -1,0 +1,59 @@
+---
+title: "ObservableJS Example"
+format: html
+execute:
+  echo: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+
+```
+
+
+```{r}
+#| include: false
+
+ds <- read_csv("data/fruits_long.csv")
+ojs_define(data = ds)
+
+```
+
+
+```{ojs}
+
+viewof selected_diet = Inputs.select(
+  ["omnivore", "vegetarian"],
+  {label: "Diet type:"}
+)
+
+ds_filtered = transpose(data).filter(
+  d => d.diet_type === selected_diet
+)
+
+```
+
+
+```{ojs}
+
+Plot.plot({
+  marks: [
+    Plot.barX(
+      ds_filtered, 
+      Plot.groupY(
+        {x: "count"}, 
+        {y: "fruit", sort: {y: "x", reverse: true}}
+      )
+    )
+  ],
+  x: {label: "Count"},
+  y: {label: "Fruit"},
+  marginLeft: 120
+})
+
+```
+

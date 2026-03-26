@@ -5,7 +5,7 @@
 
 ## Visualisation basics
 
-1. Data management
+1. Data preparation: wide to long
 2. Visualisation using volkeR
 3. Visualisation using ggplot
 
@@ -13,7 +13,7 @@
 
 See https://quarto.org/docs/interactive/
 
-- 4a Plotly with htmlwidgets
-- 4b Shiny
-- 4c ObservableJS
+4. Plotly (with htmlwidgets)
+5. Shiny
+6. ObservableJS
 

@@ -1,0 +1,44 @@
+---
+title: "Plotly example"
+format: html
+editor: 
+  markdown: 
+    wrap: 72
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(plotly)
+
+theme_set(theme_bw())
+
+
+```
+
+```{r}
+#| include: false
+
+ds <- read_csv("data/fruits_long.csv")
+
+```
+
+```{r}
+#| echo: false
+
+pl <- ds |> 
+  count(fruit, sort = TRUE) |>
+  
+  ggplot(aes(x = fruit, y = n, text = fruit)) + 
+  
+  geom_col(fill = "steelblue") +
+  coord_flip() +
+  labs(x = "Fruit", y = "Count") 
+
+ggplotly(pl)
+
+```
+

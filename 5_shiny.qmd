@@ -1,0 +1,52 @@
+---
+title: "Shiny example"
+format: html
+server: shiny
+---
+
+```{r}
+#| context: setup
+#| include: false
+
+library(tidyverse)
+library(shiny)
+
+ds <- read_csv("data/fruits_long.csv")
+
+```
+
+```{r}
+#| panel: sidebar
+#| echo: true
+
+selectInput(
+  "diet", "Diet type:",
+  choices = unique(ds$diet_type)
+)
+
+```
+
+```{r}
+#| echo: true
+
+plotOutput("mychart")
+
+```
+
+```{r}
+#| context: server
+
+output$mychart <- renderPlot({
+  ds |>
+    
+    filter(diet_type == input$diet) |>
+    
+    count(fruit) |>
+    mutate(fruit=fct_reorder(fruit, n)) |> 
+    
+    ggplot(aes(x = fruit, y = n)) +
+    geom_col(fill = "steelblue") +
+    coord_flip() +
+    labs(x = "Fruit", y = "Count")
+})
+```

@@ -1,0 +1,32 @@
+---
+title: "volkeR pacakge example"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(volker)
+
+theme_set(theme_vlkr())
+knitr::opts_chunk$set(echo = FALSE)
+
+ds <- read_csv("data/fruits_long.csv")
+
+```
+
+
+```{r}
+
+report_counts(ds, fruit)
+
+```
+
+```{r}
+
+report_metrics(ds, rank, fruit)
+
+```

@@ -1,0 +1,49 @@
+---
+title: "volker RMarkdown Example"
+output: 
+  volker::html_report
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+#
+# 1. Setup ----
+#
+
+# Knit settings
+knitr::opts_chunk$set(echo = FALSE)
+
+# Load packages
+library(tidyverse)
+library(volker)
+
+# Set plot theme
+theme_set(theme_vlkr())
+
+```
+
+
+```{r data, include=FALSE}
+#
+# 2. Load and prepare data ----
+#
+
+
+ds <- read_csv("data/fruits_long.csv")
+
+
+```
+
+```{r}
+# 3. Analyse data ----
+
+report_counts(ds, fruit)
+
+```
+
+```{r}
+
+report_metrics(ds, rank, fruit)
+
+```

@@ -1,0 +1,64 @@
+---
+title: "Prepare fruit votes"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(readxl)
+library(knitr)
+
+```
+
+### Prepare data
+
+```{r}
+#| include: false
+
+ds <- read_xlsx("data/topfruitspublic.xlsx")
+
+```
+
+```{r}
+#| include: false
+
+
+ds_long <- ds |>
+  
+  pivot_longer(
+    cols = c(first, second, third),
+    names_to  = "rank",
+    values_to = "fruit"
+  ) |>
+  
+  mutate(rank = case_when(
+    rank == "first" ~ 1,
+    rank == "second" ~ 2,
+    rank == "third" ~ 3,
+  )) |> 
+  
+  select(fruit,name,rank, everything()) |> 
+  drop_na(fruit, rank, name) 
+
+```
+
+```{r}
+#| include: false
+
+write_csv(ds_long, "data/fruits_long.csv")
+
+```
+
+
+```{r}
+#| echo: false
+
+ds_long |>
+  count(diet_type, fruit, sort = TRUE) |> 
+  kable()
+
+```
