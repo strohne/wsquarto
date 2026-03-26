@@ -1,6 +1,8 @@
 ---
 title: "volkeR pacakge example"
 format: html
+execute:
+  echo: false
 editor_options: 
   chunk_output_type: console
 ---
@@ -12,7 +14,6 @@ library(tidyverse)
 library(volker)
 
 theme_set(theme_vlkr())
-knitr::opts_chunk$set(echo = FALSE)
 
 ds <- read_csv("data/fruits_long.csv")
 

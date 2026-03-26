@@ -2,6 +2,8 @@
 title: "Shiny example"
 format: html
 server: shiny
+execute:
+  echo: false
 ---
 
 ```{r}
@@ -17,7 +19,6 @@ ds <- read_csv("data/fruits_long.csv")
 
 ```{r}
 #| panel: sidebar
-#| echo: true
 
 selectInput(
   "diet", "Diet type:",
@@ -27,7 +28,6 @@ selectInput(
 ```
 
 ```{r}
-#| echo: true
 
 plotOutput("mychart")
 

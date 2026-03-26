@@ -6,6 +6,8 @@ editor:
     wrap: 72
 editor_options: 
   chunk_output_type: console
+execute:
+  echo: false  
 ---
 
 ```{r}
@@ -27,7 +29,6 @@ ds <- read_csv("data/fruits_long.csv")
 ```
 
 ```{r}
-#| echo: false
 
 pl <- ds |> 
   count(fruit, sort = TRUE) |>
