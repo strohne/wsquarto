@@ -13,7 +13,8 @@ install.packages(c(
 'V8',
 'readxl',
 'writexl',
-'volker'
+'volker',
+'plotly'
 ))
 
 install.packages("IRkernel")
