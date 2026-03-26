@@ -1,6 +1,6 @@
 # Quarto Workshop
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/strohne/wsquarto/main?urlpath=rstudio)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/strohne/wsquarto/binder?urlpath=rstudio)
 
 
 ## Visualisation basics

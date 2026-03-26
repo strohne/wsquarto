@@ -11,6 +11,8 @@ install.packages(c(
 'duckdbfs',
 'arrow',
 'V8',
+'readxl',
+'writexl',
 'volker'
 ))
 
